@@ -6,21 +6,24 @@ interface Style {
   floatRight: ViewStyle;
   titleTextStyle: TextStyle;
   searchBarStyle: ViewStyle;
-  primaryImageStyle: ImageStyle;
+  menuImageStyle: ImageStyle;
   topBarContainer: ViewStyle;
   searchInputStyle: ViewStyle;
   contentContainer: ViewStyle;
   searchImageStyle: ImageStyle;
   subtitleTextStyle: TextStyle;
-  secondaryImageStyle: ImageStyle;
+  profileImageStyle: ImageStyle;
 }
 
 export default StyleSheet.create<Style>({
   container: {
-    margin: 32,
+    marginLeft: 24,
+    marginRight: 24,
   },
   topBarContainer: {
     flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
   },
   floatLeft: {
     marginRight: "auto",
@@ -28,17 +31,17 @@ export default StyleSheet.create<Style>({
   floatRight: {
     marginLeft: "auto",
   },
-  primaryImageStyle: {
+  menuImageStyle: {
     width: 20,
     height: 20,
   },
-  secondaryImageStyle: {
+  profileImageStyle: {
     width: 40,
     height: 40,
     borderRadius: 20,
   },
   contentContainer: {
-    marginTop: 24,
+    marginTop: 12,
   },
   titleTextStyle: {
     fontSize: 46,
@@ -53,7 +56,7 @@ export default StyleSheet.create<Style>({
   },
   searchBarStyle: {
     padding: 16,
-    marginTop: 32,
+    marginTop: 24,
     borderRadius: 24,
     flexDirection: "row",
     backgroundColor: "#f8f8f8",

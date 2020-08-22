@@ -1,48 +1,26 @@
-<img alt="React Native Typescript Library Starter" src="assets/logo.png" width="1050"/>
+<img alt="React Native Gorgeous Header" src="assets/logo.png" width="1050"/>
 
-[![Battle Tested ✅](https://img.shields.io/badge/-Battle--Tested%20%E2%9C%85-03666e?style=for-the-badge)](https://github.com/WrathChaos/react-native-typescript-library-starter)
+[![Battle Tested ✅](https://img.shields.io/badge/-Battle--Tested%20%E2%9C%85-03666e?style=for-the-badge)](https://github.com/WrathChaos/react-native-gorgeous-header)
 
-[![React Native Typescript Library Starter](https://img.shields.io/badge/-Extremely%20easy%20to%20create%20a%20React%20Native%20Component%20Library%20with%20both%20Stateful%20and%20Functional%20Component%20Examples-orange?style=for-the-badge)](https://github.com/WrathChaos/react-native-typescript-library-starter)
+[![React Native Gorgeous Header](https://img.shields.io/badge/-Extremely%20easy%20to%20create%20a%20React%20Native%20Component%20Library%20with%20both%20Stateful%20and%20Functional%20Component%20Examples-orange?style=for-the-badge)](https://github.com/WrathChaos/react-native-gorgeous-header)
 
-[![npm version](https://img.shields.io/npm/v/react-native-typescript-library-starter.svg?style=for-the-badge)](https://www.npmjs.com/package/react-native-typescript-library-starter)
-[![npm](https://img.shields.io/npm/dt/react-native-typescript-library-starter.svg?style=for-the-badge)](https://www.npmjs.com/package/react-native-typescript-library-starter)
+[![npm version](https://img.shields.io/npm/v/react-native-gorgeous-header.svg?style=for-the-badge)](https://www.npmjs.com/package/react-native-gorgeous-header)
+[![npm](https://img.shields.io/npm/dt/react-native-gorgeous-header.svg?style=for-the-badge)](https://www.npmjs.com/package/react-native-gorgeous-header)
 ![Platform - Android and iOS](https://img.shields.io/badge/platform-Android%20%7C%20iOS-blue.svg?style=for-the-badge)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg?style=for-the-badge)](https://github.com/prettier/prettier)
 
 <p align="center">
-  <img alt="React Native Typescript Library Starter"
-        src="assets/Screenshots/typescript.jpg" />
+  <img alt="React Native Gorgeous Header"
+        src="assets/Screenshots/React-Native-Gorgeous-Header.png" />
 </p>
-
-## Library Usage
-
-- `npm i`
-- Delete example folder
-- Delete build folder
-- Make your own library into the `lib` folder
-- Change package.json
-- Change README for your own documentation
-- `npm run build`
-
-```
-> react-native-typescript-library-starter@0.1.0 build /Users/kuray/Coursion/MyLibraries/ReactNative/react-native-typescript-library-starter
-> cd lib && tsc && cp ../package.json ../build/dist/ && Echo Build completed!
-
-Build completed!
-```
-
-- Test your build/dist into the new project
-- Finally, time to npm publish :)
-
-### Below part is for Documentation ! Remove above Library Usage
 
 # Installation
 
 Add the dependency:
 
 ```bash
-npm i react-native-typescript-library-starter
+npm i react-native-gorgeous-header
 ```
 
 ## Peer Dependencies
@@ -59,32 +37,46 @@ npm i react-native-typescript-library-starter
 ## Import
 
 ```jsx
-import MyComponent from "react-native-typescript-library-starter";
+import GorgeousHeader from "react-native-gorgeous-header";
 ```
 
 ## Fundamental Usage
 
 ```jsx
-<MyComponent />
+<GorgeousHeader
+  menuImageSource={menuImage}
+  searchImageSource={searchImage}
+  profileImageSource={{
+    uri:
+      "https://images.unsplash.com/photo-1514846226882-28b324ef7f28?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
+  }}
+/>
 ```
 
 # Configuration - Props
 
-| Property |  Type   | Default | Description                                             |
-| -------- | :-----: | :-----: | ------------------------------------------------------- |
-| outline  | boolean |  true   | make the button outline                                 |
-| solid    | boolean |  false  | make the button with a solid background and a shadow    |
-| gradient | boolean |  false  | make the button with a gradient background and a shadow |
-| width    | number  |   150   | change the button's width                               |
+## Gorgeous Header Props
+
+| Property            |   Type   |            Default             | Description                                                             |
+| ------------------- | :------: | :----------------------------: | ----------------------------------------------------------------------- |
+| title               |  string  |             Order              | change the title                                                        |
+| subtitle            |  string  | Healthy food can keep you fit. | change the subtitle                                                     |
+| searchIcon          |  asset   |            default             | set your own icon for the search one                                    |
+| titleTextStyle      |  style   |            default             | set your own style for title text                                       |
+| subtitleTextStyle   |  style   |            default             | set your own style for subtitle text                                    |
+| searchBarStyle      |  style   |            default             | set your own style for search text input container                      |
+| searchInputStyle    |  style   |            default             | set your own style for search text input                                |
+| menuImageStyle      |  style   |            default             | set your own style for hamburger menu image                             |
+| menuImageSource     |  asset   |            default             | set your own image instead of default hamburger menu image              |
+| menuImageOnPress    | function |           undefined            | use this to set your own function for pressing the hamburger menu image |
+| profileImageStyle   |  style   |            default             | set your own style for profile image                                    |
+| profileImageSource  |  asset   |           undefined            | use this to set your own image for profile image                        |
+| profileImageOnPress | function |           undefined            | use this to set your own function for pressing the profile image        |
 
 ## Future Plans
 
 - [x] ~~LICENSE~~
 - [ ] Write an article about the lib on Medium
-
-# Change Log
-
-Change log will be here !
 
 ## Author
 
@@ -92,4 +84,4 @@ FreakyCoder, kurayogun@gmail.com
 
 ## License
 
-React Native Typescript Library Starter is available under the MIT license. See the LICENSE file for more info.
+React Native Gorgeous Header is available under the MIT license. See the LICENSE file for more info.

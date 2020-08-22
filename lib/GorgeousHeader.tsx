@@ -6,15 +6,15 @@ import { Text, View, Image, TouchableOpacity, TextInput } from "react-native";
 import styles from "./GorgeousHeader.style";
 
 interface IProps {
-  primaryImageStyle: any;
-  primaryImageSource: any;
-  primaryImageOnPress: () => void;
-  secondaryImageStyle: any;
-  secondaryImageSource: any;
-  secondaryImageOnPress: () => void;
+  menuImageStyle: any;
+  menuImageSource: any;
+  menuImageOnPress: () => void;
+  profileImageStyle: any;
+  profileImageSource: any;
+  profileImageOnPress: () => void;
   title: string;
   subtitle: string;
-  searchIcon: any;
+  searchImageSource: any;
   titleTextStyle: any;
   searchBarStyle: any;
   searchInputStyle: any;
@@ -26,31 +26,28 @@ interface IState {}
 class GorgeousHeader extends React.Component<IProps, IState> {
   renderTopBar = () => {
     const {
-      primaryImageStyle,
-      primaryImageSource,
-      primaryImageOnPress,
-      secondaryImageStyle,
-      secondaryImageSource,
-      secondaryImageOnPress,
+      menuImageStyle,
+      menuImageSource,
+      menuImageOnPress,
+      profileImageStyle,
+      profileImageSource,
+      profileImageOnPress,
     } = this.props;
     return (
       <View style={styles.topBarContainer}>
-        <TouchableOpacity
-          style={styles.floatLeft}
-          onPress={primaryImageOnPress}
-        >
+        <TouchableOpacity style={styles.floatLeft} onPress={menuImageOnPress}>
           <Image
-            source={primaryImageSource}
-            style={primaryImageStyle || styles.primaryImageStyle}
+            source={menuImageSource}
+            style={menuImageStyle || styles.menuImageStyle}
           />
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.floatRight}
-          onPress={secondaryImageOnPress}
+          onPress={profileImageOnPress}
         >
           <Image
-            source={secondaryImageSource}
-            style={secondaryImageStyle || styles.secondaryImageStyle}
+            source={profileImageSource}
+            style={profileImageStyle || styles.profileImageStyle}
           />
         </TouchableOpacity>
       </View>
@@ -61,7 +58,7 @@ class GorgeousHeader extends React.Component<IProps, IState> {
     const {
       title = "Order",
       subtitle = "Healthy food can keep you fit.",
-      searchIcon,
+      searchImageSource,
       titleTextStyle,
       searchBarStyle,
       searchInputStyle,
@@ -74,7 +71,7 @@ class GorgeousHeader extends React.Component<IProps, IState> {
           {subtitle}
         </Text>
         <View style={searchBarStyle || styles.searchBarStyle}>
-          <Image style={styles.searchImageStyle} source={searchIcon} />
+          <Image style={styles.searchImageStyle} source={searchImageSource} />
           <TextInput
             style={searchInputStyle || styles.searchInputStyle}
             placeholder="Search something"
