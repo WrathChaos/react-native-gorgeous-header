@@ -1,6 +1,6 @@
 {
   "name": "react-native-gorgeous-header",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Fully customizable & easy to use gorgeous header view for React Native",
   "main": "./build/dist/GorgeousHeader.js",
   "repository": "git@github.com:WrathChaos/react-native-gorgeous-header.git",
@@ -31,19 +31,19 @@
   },
   "peerDependencies": {
     "react": ">= 16.x.x",
-    "react-native": ">= 0.55.x"
+    "react-native": "^0.68.1"
   },
   "devDependencies": {
+    "@react-native-community/eslint-config": "^0.0.5",
     "@types/react": "^16.9.22",
     "@types/react-native": "^0.63.0",
-    "react-native-typescript-transformer": "^1.2.13",
-    "typescript": "^3.7.4",
-    "@react-native-community/eslint-config": "^0.0.5",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.2.0",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.11",
-    "prettier": "^2.0.5"
+    "prettier": "^2.0.5",
+    "react-native-typescript-transformer": "^1.2.13",
+    "typescript": "^3.7.4"
   },
   "husky": {
     "hooks": {

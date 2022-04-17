@@ -1,24 +1,43 @@
 import * as React from "react";
-import { Text, View, Image, TouchableOpacity, TextInput } from "react-native";
+import {
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+  TextInput,
+  StyleProp,
+  ViewStyle,
+  ImageStyle,
+  TextStyle,
+  ImageSourcePropType,
+} from "react-native";
 /**
  * ? Local Imports
  */
 import styles from "./GorgeousHeader.style";
 
+type CustomViewStyleProp = StyleProp<ViewStyle> | Array<StyleProp<ViewStyle>>;
+type CustomImageStyleProp =
+  | StyleProp<ImageStyle>
+  | Array<StyleProp<ImageStyle>>;
+type CustomTextStyleProp = StyleProp<TextStyle> | Array<StyleProp<TextStyle>>;
+
 interface IProps {
-  menuImageStyle: any;
-  menuImageSource: any;
-  menuImageOnPress: () => void;
-  profileImageStyle: any;
-  profileImageSource: any;
-  profileImageOnPress: () => void;
   title: string;
   subtitle: string;
-  searchImageSource: any;
-  titleTextStyle: any;
-  searchBarStyle: any;
-  searchInputStyle: any;
-  subtitleTextStyle: any;
+  menuImageSource: ImageSourcePropType;
+  profileImageSource: ImageSourcePropType;
+  searchImageSource: ImageSourcePropType;
+  style?: CustomViewStyleProp;
+  contentContainerStyle?: CustomViewStyleProp;
+  titleTextStyle?: CustomTextStyleProp;
+  searchBarStyle?: CustomViewStyleProp;
+  searchInputStyle?: CustomTextStyleProp;
+  subtitleTextStyle?: CustomTextStyleProp;
+  menuImageStyle?: CustomImageStyleProp;
+  profileImageStyle?: CustomImageStyleProp;
+  onMenuImagePress: () => void;
+  onProfileImagePress: () => void;
 }
 
 interface IState {}
@@ -28,14 +47,14 @@ class GorgeousHeader extends React.Component<IProps, IState> {
     const {
       menuImageStyle,
       menuImageSource,
-      menuImageOnPress,
+      onMenuImagePress,
       profileImageStyle,
       profileImageSource,
-      profileImageOnPress,
+      onProfileImagePress,
     } = this.props;
     return (
       <View style={styles.topBarContainer}>
-        <TouchableOpacity style={styles.floatLeft} onPress={menuImageOnPress}>
+        <TouchableOpacity style={styles.floatLeft} onPress={onMenuImagePress}>
           <Image
             source={menuImageSource}
             style={menuImageStyle || styles.menuImageStyle}
@@ -43,7 +62,7 @@ class GorgeousHeader extends React.Component<IProps, IState> {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.floatRight}
-          onPress={profileImageOnPress}
+          onPress={onProfileImagePress}
         >
           <Image
             source={profileImageSource}
@@ -63,17 +82,18 @@ class GorgeousHeader extends React.Component<IProps, IState> {
       searchBarStyle,
       searchInputStyle,
       subtitleTextStyle,
+      contentContainerStyle,
     } = this.props;
     return (
-      <View style={styles.contentContainer}>
-        <Text style={titleTextStyle || styles.titleTextStyle}>{title}</Text>
-        <Text style={subtitleTextStyle || styles.subtitleTextStyle}>
+      <View style={[styles.contentContainer, contentContainerStyle]}>
+        <Text style={[styles.titleTextStyle, titleTextStyle]}>{title}</Text>
+        <Text style={[styles.subtitleTextStyle, subtitleTextStyle]}>
           {subtitle}
         </Text>
-        <View style={searchBarStyle || styles.searchBarStyle}>
+        <View style={[styles.searchBarStyle, searchBarStyle]}>
           <Image style={styles.searchImageStyle} source={searchImageSource} />
           <TextInput
-            style={searchInputStyle || styles.searchInputStyle}
+            style={[styles.searchInputStyle, searchInputStyle]}
             placeholder="Search something"
             {...this.props}
           />
@@ -84,7 +104,7 @@ class GorgeousHeader extends React.Component<IProps, IState> {
 
   render() {
     return (
-      <View style={styles.container}>
+      <View style={[styles.container, this.props.style]}>
         {this.renderTopBar()}
         {this.renderContent()}
       </View>
